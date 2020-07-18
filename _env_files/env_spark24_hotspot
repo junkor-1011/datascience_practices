@@ -1,0 +1,3 @@
+IMAGE=jupyter_datascience_practice_spark24_hotspot
+# IMAGE_TAG=latest
+USING_DOCKERFILE=Dockerfile_spark24_hotspot
