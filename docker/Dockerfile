@@ -1,6 +1,6 @@
 ARG BASE_REPOGITORY=junkor1011/jupyter_datascience_spark
 # ARG TAG=latest
-ARG TAG='2020-07-12'
+ARG TAG='2020-07-17'
 FROM $BASE_REPOGITORY:$TAG
 
 # PATCH (environment variable)
