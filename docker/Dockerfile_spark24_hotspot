@@ -8,3 +8,11 @@ FROM $BASE_REPOGITORY:$TAG
 ENV WORK_DIR=/home/user/work \
     DATA_DIR=/home/user/data \
     LIBS_DIR=/home/user/libs
+
+# external libs PATH
+ENV PYTHONPATH=$LIBS_DIR/pyspark_utils:$PYTHONPATH
+
+# spark setting
+ENV PROJECT_HOME=$WORK_DIR \
+    SPARK_WAREHOUSE_HOME=$DATA_DIR/hive-db/spark-warehouse \
+    HIVE_METASTORE_DB_HOME=$DATA_DIR/hive-db
