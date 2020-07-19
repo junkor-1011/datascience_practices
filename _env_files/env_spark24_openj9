@@ -1,0 +1,3 @@
+IMAGE=jupyter_datascience_practice_spark24_openj9
+# IMAGE_TAG=latest
+USING_DOCKERFILE=Dockerfile_spark24_openj9

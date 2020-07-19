@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  jupyter_datascience_practice:
+    image: ${IMAGE:-jupyter_datascience_practice}:${IMAGE_TAG:-latest}
+    build:
+      context: ./docker
+      dockerfile: ${USING_DOCKERFILE:-Dockerfile}
+      # args:
+      #   TAG: "${BASE_IMAGE_TAG:-latest}"
+    # environment:
+    # SOME_ENV: "some_value"
+    env_file:
+      - variables.env
+    volumes:
+      - "./.jupyter:/home/${DOCKER_USERNAME:-user}/.jupyter"
+      - "./work:/home/${DOCKER_USERNAME:-user}/work"
+      - "./notebook-ssl:/etc/ssl/notebook"
+      # - "./spark-defaults.conf:/usr/local/spark/conf/spark-defaults.conf"
+      #- "./spark-env.sh:/usr/local/spark/conf/spark-env.sh"
+      # - "./bashrc:/home/user/.bashrc"
+      - "./data:/home/${DOCKER_USERNAME:-user}/data"
+      - "./libs:/home/${DOCKER_USERNAME:-user}/libs"
+    privileged: true
+    # (ホストポート:コンテナポート)
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+      - "4041:4041"
+      # - "6006:6006"
+      # - "6007:6007"
+    restart: unless-stopped
+    command: jupyter lab --ip=0.0.0.0 --port=8888 --NotebookApp.password=${JUPYTER_PASSWD:-'sha1:b735ed4a0d00:75a18f79e312559cd0a266bac3974efb0382775a'}  --NotebookApp.keyfile=/etc/ssl/notebook/notebook.key    --NotebookApp.certfile=/etc/ssl/notebook/notebook.crt
