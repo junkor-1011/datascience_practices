@@ -13080,6 +13080,8 @@ div#notebook {
 <h1 id="GeoSpark-Test">GeoSpark Test<a class="anchor-link" href="#GeoSpark-Test">&#182;</a></h1><p>Ref:</p>
 <ul>
 <li><a href="https://datasystemslab.github.io/GeoSpark/tutorial/geospark-sql-python/">https://datasystemslab.github.io/GeoSpark/tutorial/geospark-sql-python/</a></li>
+<li><a href="https://github.com/DataSystemsLab/GeoSpark/blob/master/python/GeoSparkSQL.ipynb">https://github.com/DataSystemsLab/GeoSpark/blob/master/python/GeoSparkSQL.ipynb</a></li>
+<li><a href="https://github.com/DataSystemsLab/GeoSpark/blob/master/python/GeoSparkCore.ipynb">https://github.com/DataSystemsLab/GeoSpark/blob/master/python/GeoSparkCore.ipynb</a></li>
 </ul>
 
 </div>
@@ -13128,7 +13130,7 @@ div#notebook {
         <div>
             <p><b>SparkContext</b></p>
 
-            <p><a href="http://a6dee9dcf7e1:4040">Spark UI</a></p>
+            <p><a href="http://7ae7acf7bffc:4040">Spark UI</a></p>
 
             <dl>
               <dt>Version</dt>
@@ -13155,70 +13157,6 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;show databases&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[2]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>databaseName</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>default</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>tmp</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="c1"># import pandas as pd</span>
 </pre></div>
@@ -13238,7 +13176,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gpdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;japan_ver82/japan_ver82.shp&#39;</span><span class="p">)</span>
@@ -13255,7 +13193,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13369,7 +13307,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -13418,15 +13356,15 @@ div#notebook {
 +-----+------+--------------------+----+------+----------+--------------------+--------+--------+--------------------+
 only showing top 20 rows
 
-CPU times: user 41.2 s, sys: 238 ms, total: 41.4 s
-Wall time: 44.2 s
+CPU times: user 43.3 s, sys: 153 ms, total: 43.4 s
+Wall time: 46.1 s
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13452,7 +13390,7 @@ Wall time: 44.2 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -13475,8 +13413,8 @@ Wall time: 44.2 s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 5.24 ms, sys: 74 µs, total: 5.32 ms
-Wall time: 8.52 s
+<pre>CPU times: user 5.77 ms, sys: 65 µs, total: 5.84 ms
+Wall time: 15 s
 </pre>
 </div>
 </div>
@@ -13487,7 +13425,7 @@ Wall time: 8.52 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -13666,8 +13604,8 @@ only showing top 5 rows
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 104 ms, sys: 4 µs, total: 104 ms
-Wall time: 1.59 s
+<pre>CPU times: user 83.1 ms, sys: 11.8 ms, total: 94.8 ms
+Wall time: 1.98 s
 </pre>
 </div>
 </div>
