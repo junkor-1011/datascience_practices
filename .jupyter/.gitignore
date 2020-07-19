@@ -1,3 +1,4 @@
 migrated
 lab/workspaces/*
 lab/user-settings/jupyterlab-flake8
+lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
