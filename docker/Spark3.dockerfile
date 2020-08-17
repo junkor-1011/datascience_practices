@@ -1,6 +1,6 @@
 ARG BASE_REPOGITORY=junkor1011/jupyter_datascience_spark
 # ARG TAG=latest
-ARG TAG='2020-07-17_spark24_openj9'
+ARG TAG='version-0.0.11_openj9-Spark3'
 FROM $BASE_REPOGITORY:$TAG
 
 # PATCH (environment variable)

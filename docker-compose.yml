@@ -5,7 +5,7 @@ services:
     image: ${IMAGE:-jupyter_datascience_practice}:${IMAGE_TAG:-latest}
     build:
       context: ./docker
-      dockerfile: ${USING_DOCKERFILE:-Dockerfile}
+      dockerfile: ${USING_DOCKERFILE:-Spark2.dockerfile}
       # args:
       #   TAG: "${BASE_IMAGE_TAG:-latest}"
     # environment:
