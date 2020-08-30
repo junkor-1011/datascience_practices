@@ -1,4 +1,4 @@
-.ipycheckpoints
+.ipynb_checkpoints
 *.pyc
 __pycache__
 .vscode
